@@ -18,5 +18,4 @@ def test_empty_password(browser):
     LoginPage = LoginPageHelper(browser)
     LoginPage.enter_login()
     LoginPage.click_login()
-    time.sleep(5)
     assert LoginPage.get_error_text() == EMPTY_LOGIN_ERROR
