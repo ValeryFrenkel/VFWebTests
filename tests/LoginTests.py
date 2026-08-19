@@ -1,6 +1,4 @@
-import time
 import allure
-
 from core.BaseTest import browser
 from pages.BasePage import BasePage
 from pages.LoginPage import LoginPageHelper
@@ -21,6 +19,6 @@ def test_empty_login_and_password(browser):
 def test_empty_password(browser):
     BasePage(browser).get_url(BASE_URL)
     LoginPage = LoginPageHelper(browser)
-    LoginPage.enter_login()
+    LoginPage.enter_login("email")
     LoginPage.click_login()
     assert LoginPage.get_error_text() == EMPTY_LOGIN_ERROR
